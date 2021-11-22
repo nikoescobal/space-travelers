@@ -1,12 +1,21 @@
-import { Route, Switch } from 'react-router-dom';
-import MainPage from './pages/Main.page';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Missions from './pages/Missions';
+import Rockets from './pages/Rockets';
 
-function App() {
-  return (
+const App = () => (
+  <Router>
+    <Navbar />
     <Switch>
-      <Route exact path="/" component={MainPage} />
+      <Route exact path="/">
+        <Rockets />
+      </Route>
+      <Route path="/missions">
+        <Missions />
+      </Route>
     </Switch>
-  );
-}
+  </Router>
+);
 
 export default App;
