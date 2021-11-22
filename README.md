@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Space-Travelers 
+# Space-Travelers
 
 > In this project, we built a space travelers application with React and Redux. Here, users can navigate between Rockets, Missions, and Dragons.
 
@@ -26,9 +26,9 @@
 **To get a local copy up and running follow these simple example steps.**
 ## Setup
 
-- Clone this repository. 
+- Clone this repository.
 - Run ``npm i`` or ``yarn`` to install dependencies required to start the project
-- Make sure to use node v15.11.0 (npm v7.6.0) 
+- Make sure to use node v15.11.0 (npm v7.6.0)
 - Run ``npm start``
 
 ## Run Tests
@@ -45,7 +45,7 @@ npm run lint
 [<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/nikoescobal)
 [<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/nikolas-escobal/)
  <a href="mailto:niko.escobal@gmail.com?subject=Sup Niko?"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
- 
+
  👤 **Gabriel Nwachukwu**
 
 [<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/gabrielcoder247)
@@ -77,4 +77,7 @@ Give a ⭐️ if you like this project!
 This project makes use of the MIT license.
 
 Just clone and then run npm install to make it work.
+
+
+
 
