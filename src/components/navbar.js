@@ -1,5 +1,5 @@
 import React from 'react';
-import planet from '../images/planet.png';
+import planet from '../image/planet.png';
 
 const Navbar = () => {
   const links = [
