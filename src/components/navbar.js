@@ -1,7 +1,28 @@
 import React from 'react';
-import planet from '../image/planet.png';
+import planet from '../images/planet.png';
 
 const Navbar = () => {
+  const links = [
+    {
+      id: 1,
+      path: '/',
+      text: 'Rockets',
+      name: 'rockets',
+    },
+    {
+      id: 2,
+      path: '/missions',
+      text: 'Missions',
+      name: 'missions',
+    },
+    {
+      id: 3,
+      path: '/my-profile',
+      text: 'My Profile',
+      name: 'my-profile',
+    },
+  ];
+
   return (
     <nav className="navbar">
       <header className="logo-container">
@@ -10,8 +31,8 @@ const Navbar = () => {
       </header>
       <ul className="links">
         {links.map((link) => (
-          <li key={link.id} className={link.name}>
-          </li>
+          // eslint-disable-next-line react/self-closing-comp
+          <li key={link.id} className={link.name}></li>
         ))}
       </ul>
     </nav>
