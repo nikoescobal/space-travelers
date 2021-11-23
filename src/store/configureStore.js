@@ -1,8 +1,9 @@
+/* eslint-disable import/no-named-as-default */
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rocketsReducer from './rockets/rockets';
+import rocketsReducer from './reducers/rootReducer';
 
 const reducers = combineReducers({
   rockets: rocketsReducer,
