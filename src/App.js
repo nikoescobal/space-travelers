@@ -10,15 +10,10 @@ const App = () => (
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/">
-        <Rockets />
-      </Route>
-      <Route path="/missions">
-        <Missions />
-      </Route>
-      <Route exact path="/dragons">
-        <Dragons />
-      </Route>
+      <Route exact path="/" component={Rockets} />
+      <Route path="/missions" component={Missions} />
+      <Route path="/my-profiles" component={Profiles} />
+      <Route exact path="/dragons" component={Dragons} />
     </Switch>
   </Router>
 );
