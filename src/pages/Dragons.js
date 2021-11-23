@@ -1,3 +1,6 @@
+/* stylelint-disable */
+/* eslint-disable */
+
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import {

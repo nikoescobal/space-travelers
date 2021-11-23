@@ -1,3 +1,6 @@
+/* stylelint-disable */
+/* eslint-disable */
+
 const loadDragons = (dragons) => ({
   type: LOAD_DRAGONS,
   payload: dragons,

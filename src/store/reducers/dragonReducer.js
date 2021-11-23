@@ -1,3 +1,6 @@
+/* stylelint-disable */
+/* eslint-disable */
+
 const dragonReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_DRAGONS:
