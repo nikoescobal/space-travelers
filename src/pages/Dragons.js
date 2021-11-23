@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import {
-  reserveDragons,
+  // reserveDragons,
   fetchData,
-  cancelReservation,
-} from '../components/Dragons';
+  // cancelReservation,
+} from '../store/reducers/actions/dragonActions.js';
 
 const Dragons = () => {
   const dragonStore = useSelector((state) => state.dragons);
