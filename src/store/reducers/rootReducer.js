@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
 import tempReducer from './tempReducer';
-
-const GET_ROCKETS = 'space-travelers-hub/rockets/GET_ROCKETS';
-const SET_ROCKETS = 'space-travelers-hub/rockets/SET_ROCKETS';
+import { GET_ROCKETS, SET_ROCKETS } from '../types';
 
 export default combineReducers({
   tempReducer,
