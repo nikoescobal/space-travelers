@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import planet from '../image/planet.png';
 import Missions from './Missions';
 import Profiles from './Profiles';
