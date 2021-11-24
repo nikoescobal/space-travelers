@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect } from "react";
-import {} from "../store/reducers/dragonReducer";
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import {} from '../store/reducers/dragonReducer';
 
 import {
   cancelReservation,
   reserveDragons,
   fetchData,
-} from "../store/reducers/actions/dragonActions";
+} from '../store/reducers/actions/dragonActions';
 
 const Dragons = () => {
   const dragonStore = useSelector((state) => state.dragons.dragons);
@@ -23,9 +23,11 @@ const Dragons = () => {
   }, []);
 
   return (
-    <div className='dragons-container'>
+    <div className="dragons-container">
       {dragonStore.map((dragon) => {
-        const { id, name, type, images, reserved } = dragon;
+        const {
+          id, name, type, images, reserved,
+        } = dragon;
         return (
           <div key={id}>
             <div>
@@ -35,12 +37,12 @@ const Dragons = () => {
             <p>{type}</p>
             <div>
               {!reserved && (
-                <button type='button' onClick={() => handleReserve(id)}>
+                <button type="button" onClick={() => handleReserve(id)}>
                   Reserve Dragon
                 </button>
               )}
               {reserved && (
-                <button type='button' onClick={() => cancelBooking(id)}>
+                <button type="button" onClick={() => cancelBooking(id)}>
                   Cancel Dragon Reservation
                 </button>
               )}
