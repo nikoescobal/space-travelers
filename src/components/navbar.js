@@ -37,30 +37,16 @@ const Navbar = () => {
         <img src={planet} alt="Logo" className="logo" />
         <h1 className="title"> Space Travelers&rsquo; Hub </h1>
       </header>
-      {' '}
       <ul className="links">
-        {' '}
         {links.map((link) => (
-          // eslint-disable-next-line react/self-closing-comp
-          <li key={link.id} className={link.name}></li>
+          <li key={link.id} className={link.name}>
+            <NavLink exact to={link.path} activeClassName="active-link">
+              {link.text}
+            </NavLink>
+          </li>
         ))}
-        {' '}
       </ul>
-      {' '}
-      <div>
-        <NavLink
-          to={{ pathname: `${links.path}` }}
-          key={links.id}
-          style={(isActive) => ({
-            color: isActive ? 'blue' : '',
-          })}
-        >
-          {links.name}
-        </NavLink>
-      </div>
-      {' '}
     </nav>
   );
 };
-
 export default Navbar;
