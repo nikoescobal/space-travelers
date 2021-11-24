@@ -1,6 +1,7 @@
+/* eslint-disable no-case-declarations */
 import { combineReducers } from 'redux';
 import tempReducer from './tempReducer';
-import { GET_ROCKETS, SET_ROCKETS } from '../types';
+import { GET_ROCKETS, SET_ROCKETS, SET_RESERVES } from './types';
 import dragonReducer from './dragonReducer';
 
 export default combineReducers({
@@ -8,14 +9,22 @@ export default combineReducers({
   dragonReducer,
 });
 
-const initialState = [];
+const initialState = { rockets: null };
 
 export function rocketsReducer(state = initialState, action) {
   switch (action.type) {
     case GET_ROCKETS:
       return state;
     case SET_ROCKETS:
-      return [...state, action.payload];
+      return { ...state, rockets: action.payload };
+    case SET_RESERVES:
+      const newState = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) {
+          return rocket;
+        }
+        return { ...rocket, reserved: true };
+      });
+      return { ...state, rockets: newState };
     default:
       return state;
   }
