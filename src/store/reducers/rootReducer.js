@@ -1,4 +1,5 @@
 /* eslint-disable no-case-declarations */
+
 import { combineReducers } from 'redux';
 import tempReducer from './tempReducer';
 import {
@@ -6,7 +7,7 @@ import {
   SET_ROCKETS,
   SET_RESERVES,
   CANCEL_RESERVES,
-} from './types';
+} from '../types';
 import dragonReducer from './dragonReducer';
 
 export default combineReducers({

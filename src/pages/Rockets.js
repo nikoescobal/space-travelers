@@ -35,7 +35,9 @@ const Rockets = () => {
             <div className="rocket-info">
               <h1>{rocket.rocket_name}</h1>
               <p>
-                {rocket.reserved && <span className="reserve-badge">Reserved</span>}
+                {rocket.reserved && (
+                  <span className="reserve-badge">Reserved</span>
+                )}
                 {rocket.description}
               </p>
               <div className="button-div">

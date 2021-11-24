@@ -16,7 +16,7 @@ export const reserveDragons = (id) => ({
   payload: id,
 });
 
-export const cancelReservation = (id) => ((dispatch) => {
+export const cancelReservation = (id) => ({
   type: CANCEL_RESERVATION,
   payload: id,
 });

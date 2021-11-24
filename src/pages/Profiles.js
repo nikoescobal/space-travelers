@@ -20,7 +20,12 @@ const Profiles = () => {
       <div className="rockets">
         <h1>My Rockets</h1>
         <ul className="list-container">
-          {rockets && rockets.filter((rocket) => (<li key={rocket.id} className="list-item">{rocket.rocket_name}</li>))}
+          {rockets
+            && rockets.filter((rocket) => (
+              <li key={rocket.id} className="list-item">
+                {rocket.rocket_name}
+              </li>
+            ))}
         </ul>
       </div>
     </section>
