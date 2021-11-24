@@ -11,7 +11,7 @@ export const url = 'https://api.spacexdata.com/v3/dragons';
 
 export const JOIN_MISSION = 'space/missions/JOINMISSION';
 export const LOAD_MISSIONS = 'space/missions/LOADMISSIONS';
-const LEAVE_MISSION = 'spacex-hub/missions/LEAVE_MISSION';
+export const LEAVE_MISSION = 'spacex-hub/missions/LEAVE_MISSION';
 
 export const initialState = {
     dragons: [],
