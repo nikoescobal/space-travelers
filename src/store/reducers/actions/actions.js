@@ -5,6 +5,7 @@ import {
   SET_ROCKETS,
   ERROR_ROCKETS,
   SET_RESERVES,
+  CANCEL_RESERVES,
 } from '../types';
 
 export const getRocketsAction = () => async (dispatch) => {
@@ -23,6 +24,14 @@ export const getRocketsAction = () => async (dispatch) => {
       return newRocketList.push(rocketObj);
     });
     dispatch({ type: SET_ROCKETS, payload: newRocketList });
+  } catch (error) {
+    dispatch({ type: ERROR_ROCKETS, payload: error.message });
+  }
+};
+
+export const cancelReservationAction = (rocketId) => (dispatch) => {
+  try {
+    dispatch({ type: CANCEL_RESERVES, payload: rocketId });
   } catch (error) {
     dispatch({ type: ERROR_ROCKETS, payload: error.message });
   }
