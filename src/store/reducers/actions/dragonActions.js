@@ -1,55 +1,53 @@
-/* stylelint-disable */
-/* eslint-disable */
-import { LOAD_DRAGONS, LOAD_FAILED, CANCEL_RESERVATION, RESERVE_DRAGONS } from '../../types';
-const url = 'https://api.spacexdata.com/v3/dragons';
+import {
+  url,
+  LOAD_DRAGONS,
+  RESERVE_DRAGONS,
+  CANCEL_RESERVATION,
+  LOAD_FAILED,
+} from '../../types';
+
 const loadDragons = (dragons) => ({
-    type: LOAD_DRAGONS,
-    payload: dragons,
+  type: LOAD_DRAGONS,
+  payload: dragons,
 });
 
 export const reserveDragons = (id) => ({
-    type: RESERVE_DRAGONS,
-    payload: id,
+  type: RESERVE_DRAGONS,
+  payload: id,
 });
 
-export const cancelReservation = (id) => ({
-    type: CANCEL_RESERVATION,
-    payload: id,
+export const cancelReservation = (id) => ((dispatch) => {
+  type: CANCEL_RESERVATION,
+  payload: id,
 });
 
 const loadFailed = (err) => ({
-    type: LOAD_FAILED,
-    payload: err,
+  type: LOAD_FAILED,
+  payload: err,
 });
 
-export const fetchData = () => async(dispatch) => {
-    try {
-        const response = await fetch(url);
-        const dragons = await response.json();
-        console.log(dragons);
+export const fetchData = () => async (dispatch) => {
+  try {
+    const response = await fetch(url);
+    const dragons = await response.json();
 
-        dispatch(
-            loadDragons(
-                dragons.map((dragon) => {
-                    const {
-                        id,
-                        name,
-                        type,
-                        flickr_images: images,
-                    } = dragon;
-                    return {
-                        id,
-                        name,
-                        type,
-                        images,
-                    };
-                }),
-            ),
-        );
-    } catch (err) {
-        err.description = 'An error occurred. Please try again later.';
-        dispatch(loadFailed(err.description));
-    }
+    dispatch(
+      loadDragons(
+        dragons.map((dragon) => {
+          const {
+            id, name, type, flickr_images: images,
+          } = dragon;
+          return {
+            id,
+            name,
+            type,
+            images,
+          };
+        }),
+      ),
+    );
+  } catch (err) {
+    err.description = 'An error occurred. Please try again later.';
+    dispatch(loadFailed(err.description));
+  }
 };
-
-fetchData()
