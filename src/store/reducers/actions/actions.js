@@ -1,3 +1,6 @@
+/* stylelint-disable */
+/* eslint-disable */
+
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import { GET_ROCKETS, SET_ROCKETS, ERROR_ROCKETS } from './types';
