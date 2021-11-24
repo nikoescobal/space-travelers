@@ -41,7 +41,7 @@ const Dragons = () => {
               )}
               {reserved && (
                 <button type='button' onClick={() => cancelBooking(id)}>
-                  Cancel Reservation
+                  Cancel Dragon Reservation
                 </button>
               )}
             </div>
