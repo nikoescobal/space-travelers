@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux';
-import tempReducer from './tempReducer';
-import { GET_ROCKETS, SET_ROCKETS } from '../types';
-import dragonReducer from './dragonReducer';
+import { combineReducers } from "redux";
+import tempReducer from "./tempReducer";
+import { GET_ROCKETS, SET_ROCKETS } from "../types";
+import dragonReducer from "./dragonReducer";
 
 export default combineReducers({
   tempReducer,
