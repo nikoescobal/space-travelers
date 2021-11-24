@@ -1,6 +1,7 @@
 export const GET_ROCKETS = 'space-travelers-hub/rockets/GET_ROCKETS';
 export const SET_ROCKETS = 'space-travelers-hub/rockets/SET_ROCKETS';
 export const ERROR_ROCKETS = 'space-travelers-hub/rockets/ERROR_ROCKETS';
+export const CANCEL_RESERVES = 'space-travelers-hub/rockets/CANCEL_RESERVES';
 export const SET_RESERVES = 'space-travelers-hub/rockets/SET_RESERVES';
 
 export const LOAD_DRAGONS = 'LOAD_DRAGONS';
