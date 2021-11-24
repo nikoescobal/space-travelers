@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getRocketsAction } from '../store/reducers/actions/actions';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRocketsAction } from "../store/reducers/actions/actions";
 
 const Profiles = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,12 @@ const Profiles = () => {
       <div className="rockets">
         <h1>My Rockets</h1>
         <ul className="list-container">
-          {rockets && rockets.filter((rocket) => (<li key={rocket.id} className="list-item">{rocket.rocket_name}</li>))}
+          {rockets &&
+            rockets.filter((rocket) => (
+              <li key={rocket.id} className="list-item">
+                {rocket.rocket_name}
+              </li>
+            ))}
         </ul>
       </div>
     </section>

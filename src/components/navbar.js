@@ -1,33 +1,33 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import planet from '../image/planet.png';
-import '../styles/index.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import planet from "../image/planet.png";
+import "../styles/index.css";
 
 const Navbar = () => {
   const links = [
     {
       id: 1,
-      path: '/',
-      text: 'Rockets',
-      name: 'rockets',
+      path: "/",
+      text: "Rockets",
+      name: "rockets",
     },
     {
       id: 2,
-      path: '/missions',
-      text: 'Missions',
-      name: 'missions',
+      path: "/missions",
+      text: "Missions",
+      name: "missions",
     },
     {
       id: 3,
-      path: '/my-profile',
-      text: 'My Profile',
-      name: 'my-profile',
+      path: "/my-profile",
+      text: "My Profile",
+      name: "my-profile",
     },
     {
       id: 4,
-      path: '/dragons',
-      text: 'Dragons',
-      name: 'dragons',
+      path: "/dragons",
+      text: "Dragons",
+      name: "dragons",
     },
   ];
 

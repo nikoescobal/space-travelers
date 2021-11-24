@@ -1,13 +1,20 @@
-import { useSelector, useDispatch } from 'react-redux';
-import React, { useEffect } from 'react';
-import {} from '../store/reducers/dragonReducer';
+/* eslint-disable prettier/prettier */
+import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import {} from "../store/reducers/dragonReducer";
 
-import { fetchData } from '../store/reducers/actions/dragonActions';
+import {
+  cancelReservation,
+  reserveDragons,
+  fetchData,
+} from "../store/reducers/actions/dragonActions";
 
 const Dragons = () => {
   const dragonStore = useSelector((state) => state.dragons.dragons);
-  console.log(dragonStore);
   const dispatch = useDispatch();
+
+  const handleReserve = (id) => dispatch(reserveDragons(id));
+  const cancelBooking = (id) => dispatch(cancelReservation(id));
 
   useEffect(() => {
     if (!dragonStore.length) {
@@ -16,11 +23,9 @@ const Dragons = () => {
   }, []);
 
   return (
-    <div className="dragons-container">
+    <div className='dragons-container'>
       {dragonStore.map((dragon) => {
-        const {
-          id, name, type, images,
-        } = dragon;
+        const { id, name, type, images, reserved } = dragon;
         return (
           <div key={id}>
             <div>
@@ -28,6 +33,18 @@ const Dragons = () => {
             </div>
             <h2>{name}</h2>
             <p>{type}</p>
+            <div>
+              {!reserved && (
+                <button type='button' onClick={() => handleReserve(id)}>
+                  Reserve Dragon
+                </button>
+              )}
+              {reserved && (
+                <button type='button' onClick={() => cancelBooking(id)}>
+                  Cancel Reservation
+                </button>
+              )}
+            </div>
           </div>
         );
       })}
