@@ -1,13 +1,6 @@
-/* stylelint-disable */
-/* eslint-disable */
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import planet from '../image/planet.png';
-import Missions from './Missions';
-import Profiles from './Profiles';
-import Rockets from './Rockets';
-import Dragons from './Dragons';
 
 const Navbar = () => {
   const links = [
@@ -41,7 +34,7 @@ const Navbar = () => {
     <nav className="navbar">
       <header className="logo-container">
         <img src={planet} alt="Logo" className="logo" />
-        <h1 className="title"> Space Travelers & rsquo; Hub </h1>
+        <h1 className="title"> Space Travelers&rsquo; Hub </h1>
       </header>
       {' '}
       <ul className="links">
@@ -65,16 +58,6 @@ const Navbar = () => {
         </NavLink>
       </div>
       {' '}
-      <Switch>
-        <Route exact path="/" component={Rockets} />
-        {' '}
-        <Route path="/missions" component={Missions} />
-        {' '}
-        <Route path="/profiles" component={Profiles} />
-        {' '}
-        <Route path="/dragons" component={Dragons} />
-        {' '}
-      </Switch>
     </nav>
   );
 };

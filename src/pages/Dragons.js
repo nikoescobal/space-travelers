@@ -1,16 +1,12 @@
-/* stylelint-disable */
-/* eslint-disable */
-
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import {
-  // reserveDragons,
-  fetchData,
-  // cancelReservation,
-} from '../store/reducers/actions/dragonActions.js';
+import {} from '../store/reducers/dragonReducer';
+
+import { fetchData } from '../store/reducers/actions/dragonActions';
 
 const Dragons = () => {
-  const dragonStore = useSelector((state) => state.dragons);
+  const dragonStore = useSelector((state) => state.dragons.dragons);
+  console.log(dragonStore);
   const dispatch = useDispatch();
 
   useEffect(() => {

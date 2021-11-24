@@ -1,5 +1,4 @@
-/* stylelint-disable */
-/* eslint-disable */
+import { LOAD_DRAGONS, LOAD_FAILED, initialState } from '../types';
 
 const dragonReducer = (state = initialState, action) => {
   switch (action.type) {
