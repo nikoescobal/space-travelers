@@ -5,7 +5,7 @@ import {
   ERROR_ROCKETS,
   SET_RESERVES,
   CANCEL_RESERVES,
-} from '../../types';
+} from '../types';
 
 export const getRocketsAction = () => async (dispatch) => {
   const baseUrl = 'https://api.spacexdata.com/v3/rockets';
