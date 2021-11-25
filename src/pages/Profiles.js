@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRocketsAction } from '../store/reducers/actions/actions';
+import { getRocketsAction } from '../store/reducers/actions/rocketActions';
 
 const Profiles = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const Profiles = () => {
       <div className="rockets-container">
         <h1>My Rockets</h1>
         <ul className="list-container">
-        {rockets
+          {rockets
             && rockets
               .filter((rocket) => rocket.reserved)
               .map((filtered) => (<li key={filtered.id}>{filtered.rocket_name}</li>))}
