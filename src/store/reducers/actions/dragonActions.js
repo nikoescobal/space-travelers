@@ -1,10 +1,5 @@
-import {
-  url,
-  LOAD_DRAGONS,
-  RESERVE_DRAGONS,
-  CANCEL_RESERVATION,
-  LOAD_FAILED,
-} from '../../types';
+/* stylelint-disable */
+/* eslint-disable */
 
 const loadDragons = (dragons) => ({
   type: LOAD_DRAGONS,
@@ -30,6 +25,7 @@ export const fetchData = () => async (dispatch) => {
   try {
     const response = await fetch(url);
     const dragons = await response.json();
+    console.log(dragons);
 
     dispatch(
       loadDragons(

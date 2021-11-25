@@ -1,19 +1,17 @@
+/* stylelint-disable */
+/* eslint-disable */
+
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import {} from '../store/reducers/dragonReducer';
-
 import {
-  cancelReservation,
-  reserveDragons,
+  // reserveDragons,
   fetchData,
-} from '../store/reducers/actions/dragonActions';
+  // cancelReservation,
+} from '../store/reducers/actions/dragonActions.js';
 
 const Dragons = () => {
-  const dragonStore = useSelector((state) => state.dragons.dragons);
+  const dragonStore = useSelector((state) => state.dragons);
   const dispatch = useDispatch();
-
-  const handleReserve = (id) => dispatch(reserveDragons(id));
-  const cancelBooking = (id) => dispatch(cancelReservation(id));
 
   useEffect(() => {
     if (!dragonStore.length) {
@@ -25,7 +23,7 @@ const Dragons = () => {
     <div className="dragons-container">
       {dragonStore.map((dragon) => {
         const {
-          id, name, type, images, reserved,
+          id, name, type, images,
         } = dragon;
         return (
           <div key={id}>
@@ -34,18 +32,6 @@ const Dragons = () => {
             </div>
             <h2>{name}</h2>
             <p>{type}</p>
-            <div>
-              {!reserved && (
-                <button type="button" onClick={() => handleReserve(id)}>
-                  Reserve Dragon
-                </button>
-              )}
-              {reserved && (
-                <button type="button" onClick={() => cancelBooking(id)}>
-                  Cancel Dragon Reservation
-                </button>
-              )}
-            </div>
           </div>
         );
       })}

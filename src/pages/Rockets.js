@@ -4,16 +4,16 @@ import {
   cancelReservationAction,
   getRocketsAction,
   setReserveAction,
-} from '../store/reducers/actions/actions';
+} from '../store/reducers/actions/rocketActions';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const { rockets } = useSelector((state) => state.rockets);
-  const loadRockets = () => {
-    dispatch(getRocketsAction());
-  };
+
   useEffect(() => {
-    loadRockets();
+    if (!rockets) {
+      dispatch(getRocketsAction());
+    }
   }, []);
 
   const setReserve = (id) => {
