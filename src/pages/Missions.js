@@ -1,10 +1,10 @@
-// import React, { useEffect } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { v4 as uuidv4 } from "uuid";
+// import React, { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { v4 as uuidv4 } from 'uuid';
 // import {
 //   getMissions,
 //   joinMission,
-// } from "../store/reducers/actions/missionActions";
+// } from '../store/reducers/actions/missionActions';
 
 // const selectMissions = (state) => state.missionsReducer;
 
@@ -17,53 +17,87 @@
 //   console.log(selectedMissions);
 //   return (
 //     <div>
-//       <table className='table'>
+//       <table className="table">
 //         <thead>
 //           <tr>
-//             <th> Mission </th> <th> Description </th> <th> Status </th>{" "}
-//             <th> {} </th>{" "}
-//           </tr>{" "}
-//         </thead>{" "}
+//             <th> Mission </th>
+//             {' '}
+//             <th> Description </th>
+//             {' '}
+//             <th> Status </th>
+//             {' '}
+//             <th>
+//               {' '}
+//               {}
+//               {' '}
+//             </th>
+//             {' '}
+//           </tr>
+//           {' '}
+//         </thead>
+//         {' '}
 //         <tbody>
-//           {" "}
+//           {' '}
 //           {selectedMissions.map((mission) => (
 //             <tr key={uuidv4()}>
-//               {" "}
-//               {console.log(mission.isReserved)}{" "}
-//               <td className='mission-name'> {mission.mission_name} </td>{" "}
-//               <td> {mission.mission_description} </td>{" "}
-//               <td className='status' width='100px'>
-//                 {" "}
+//               {' '}
+//               {console.log(mission.isReserved)}
+//               {' '}
+//               <td className="mission-name">
+//                 {' '}
+//                 {mission.mission_name}
+//                 {' '}
+//               </td>
+//               {' '}
+//               <td>
+//                 {' '}
+//                 {mission.mission_description}
+//                 {' '}
+//               </td>
+//               {' '}
+//               <td className="status" width="100px">
+//                 {' '}
 //                 {mission.isReserved ? (
-//                   <div className='success'> ACTIVE MEMBER </div>
+//                   <div className="success"> ACTIVE MEMBER </div>
 //                 ) : (
-//                   <div classNname='secondary'> NOT A MEMBER </div>
-//                 )}{" "}
-//               </td>{" "}
-//               <td className='status' width='150px'>
-//                 {" "}
+//                   <div classNname="secondary"> NOT A MEMBER </div>
+//                 )}
+//                 {' '}
+//               </td>
+//               {' '}
+//               <td className="status" width="150px">
+//                 {' '}
 //                 {mission.isReserved ? (
 //                   <button
-//                     className='outline-danger'
+//                     type="button"
+//                     className="outline-danger"
 //                     onClick={() => dispatch(leaveMission(mission.mission_id))}
 //                   >
-//                     {" "}
-//                     Leave Mission{" "}
+//                     {' '}
+//                     Leave Mission
+//                     {' '}
 //                   </button>
 //                 ) : (
 //                   <button
-//                     className='outline-dark'
+//                     type="button"
+//                     className="outline-dark"
 //                     onClick={() => dispatch(joinMission(mission.mission_id))}
 //                   >
-//                     {" "}
-//                     Join Mission{" "}
+//                     {' '}
+//                     Join Mission
+//                     {' '}
 //                   </button>
-//                 )}{" "}
-//               </td>{" "}
+//                 )}
+//                 {' '}
+//               </td>
+//               {' '}
 //             </tr>
-//           ))}{" "}
-//         </tbody>{" "}
-//       </table>{" "}
+//           ))}
+//           {' '}
+//         </tbody>
+//         {' '}
+//       </table>
+//       {' '}
 //     </div>
 //   );
 // };
