@@ -22,34 +22,36 @@ const Dragons = () => {
   }, []);
 
   return (
-    <div className="dragons-container">
+    <div className=" p-6 dragons-container grid grid-cols-1">
       {dragonStore.map((dragon) => {
         const {
           id, name, type, images, reserved,
         } = dragon;
         return (
-          <div key={id}>
-            <div>
-              <img src={images[0]} alt={name} />
+          <div className="flex" key={id}>
+            <div className="h-72 w-72 py-3">
+              <img className="h-full" src={images[0]} alt={name} />
             </div>
-            <h2>{name}</h2>
-            <div>
-              {reserved && (
-                <div className="bg-blue-500 py-2 px-4">Reserved</div>
-              )}
-            </div>
-            <p>{type}</p>
-            <div>
-              {!reserved && (
-                <button type="button" onClick={() => handleReserve(id)}>
-                  Reserve Dragon
-                </button>
-              )}
-              {reserved && (
-                <button type="button" onClick={() => cancelBooking(id)}>
-                  Cancel Dragon Reservation
-                </button>
-              )}
+            <div className="flex flex-col px-4 py-2">
+              <h2 className="text-lg font-bold">{name}</h2>
+              <div>
+                {reserved && (
+                  <div className="p-0.5 bg-green-600 items-center w-20 flex text-center justify-center text-white rounded">Reserved</div>
+                )}
+              </div>
+              <p className="capitalize py-2.5">{type}</p>
+              <div>
+                {!reserved && (
+                  <button className="px-4 py-2 bg-blue-500 text-white rounded" type="button" onClick={() => handleReserve(id)}>
+                    Reserve Dragon
+                  </button>
+                )}
+                {reserved && (
+                  <button className="px-4 py-2 text-gray-500 border-2 border-gray-500 rounded" type="button" onClick={() => cancelBooking(id)}>
+                    Cancel Dragon Reservation
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         );
