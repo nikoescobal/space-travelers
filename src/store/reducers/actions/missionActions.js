@@ -23,17 +23,32 @@ export const fetchAllMissions = async () => {
 
 export const missionsSelector = (state) => state.missions;
 
-export const getMissions = () =>
-  async function getMissions(dispatch) {
-    const allMissions = await fetchAllMissions();
-    const missions = allMissions.map((mission) => ({
-      id: mission.mission_id,
-      missionName: mission.mission_name,
-      description: mission.description,
-      wikipedia: mission.details,
-    }));
-    dispatch(loadMissions(missions));
-  };
+// export const getMissions = () =>
+//   async function getMissions(dispatch) {
+//     const allMissions = await fetchAllMissions();
+//     const missions = allMissions.map((mission) => ({
+//       id: mission.mission_id,
+//       missionName: mission.mission_name,
+//       description: mission.description,
+//       wikipedia: mission.details,
+//     }));
+//     dispatch(loadMissions(missions));
+//   };
+
+export const getMissions = () => async (dispatch) => {
+  const response = await fetch(URL);
+  const data = await response.json();
+  const missionArr = [];
+  data.forEach((m) => {
+    const mission = {
+      mission_id: m.mission_id,
+      mission_name: m.mission_name,
+      mission_description: m.description,
+    };
+    missionArr.push(mission);
+  });
+  dispatch(loadMissions(missionArr));
+};
 export const newStateToJoinMission = (missions, id) => {
   const newState = missions.map((mission) => {
     if (mission.mission_id !== id) {
