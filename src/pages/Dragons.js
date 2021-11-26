@@ -23,37 +23,92 @@ const Dragons = () => {
 
   return (
     <div className="dragons-container">
-      {dragonStore.map((dragon) => {
-        const {
-          id, name, type, images, reserved,
-        } = dragon;
-        return (
-          <div key={id}>
-            <div>
-              <img src={images[0]} alt={name} />
-            </div>
-            <h2>{name}</h2>
-            <div>
-              {reserved && (
-                <div className="bg-blue-500 py-2 px-4">Reserved</div>
-              )}
-            </div>
-            <p>{type}</p>
-            <div>
-              {!reserved && (
-                <button type="button" onClick={() => handleReserve(id)}>
-                  Reserve Dragon
-                </button>
-              )}
-              {reserved && (
-                <button type="button" onClick={() => cancelBooking(id)}>
-                  Cancel Dragon Reservation
-                </button>
-              )}
-            </div>
-          </div>
-        );
-      })}
+      {' '}
+      {
+            dragonStore.map((dragon) => {
+              const {
+                id,
+                name,
+                type,
+                images,
+                reserved,
+              } = dragon;
+              return (
+                <div key={id}>
+                  <div>
+                    <img
+                      src={images[0]}
+                      alt={name}
+                    />
+                  </div>
+                  {' '}
+                  <h2>
+                    {' '}
+                    { name }
+                    {' '}
+
+                  </h2>
+                  {' '}
+                  <div>
+                    {' '}
+                    {
+                        reserved && (
+                        <div className="bg-blue-500 py-2 px-4">
+                          {' '}
+                          Reserved
+                          {' '}
+                        </div>
+                        )
+                    }
+                    {' '}
+
+                  </div>
+                  {' '}
+                  <p>
+                    {' '}
+                    { type }
+                    {' '}
+
+                  </p>
+                  {' '}
+                  <div>
+                    {' '}
+                    {!reserved && (
+                    <button
+                      type="button"
+                      onClick={
+                                () => handleReserve(id)
+}
+                    >
+                      Reserve Dragon
+                      {' '}
+                    </button>
+                    )}
+                    {' '}
+                    {
+                        reserved && (
+                        <button
+                          type="button"
+                          onClick={
+                                () => cancelBooking(id)
+}
+                        >
+                          Cancel Dragon Reservation
+                          {' '}
+                        </button>
+                        )
+                    }
+                    {' '}
+
+                  </div>
+                  {' '}
+
+                </div>
+              );
+            })
+        }
+      {' '}
+
     </div>
   );
 };
