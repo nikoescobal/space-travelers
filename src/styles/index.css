@@ -99,6 +99,20 @@ a:active {
   margin-bottom: 20px;
 }
 
+.rocket-info p {
+  line-height: 25px;
+}
+
+.missions-container {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.rockets-container {
+  width: 100%;
+  margin-left: 20px;
+}
+
 .button-div {
   margin-top: 20px;
 }
@@ -119,7 +133,7 @@ a:active {
 }
 
 .inner-padding {
-  padding: 30px;
+  padding: 30px 50px;
 }
 
 .cancel-reserve-btn {
@@ -136,6 +150,7 @@ a:active {
 }
 
 .my-profile {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }

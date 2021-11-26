@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRocketsAction } from '../store/reducers/actions/actions';
+import { getRocketsAction } from '../store/reducers/actions/rocketActions';
 
 const Profiles = () => {
   const dispatch = useDispatch();
@@ -10,22 +10,25 @@ const Profiles = () => {
     if (!rockets) {
       dispatch(getRocketsAction());
     }
-  });
+  }, []);
 
   return (
     <section className="my-profile inner-padding">
-      <div>
+      <div className="missions-container">
         <h1>My Missions</h1>
+        <ul className="list-container">
+          <li>mission</li>
+          <li>mission</li>
+          <li>mission</li>
+        </ul>
       </div>
-      <div className="rockets">
+      <div className="rockets-container">
         <h1>My Rockets</h1>
         <ul className="list-container">
           {rockets
-            && rockets.filter((rocket) => (
-              <li key={rocket.id} className="list-item">
-                {rocket.rocket_name}
-              </li>
-            ))}
+            && rockets
+              .filter((rocket) => rocket.reserved)
+              .map((filtered) => (<li key={filtered.id}>{filtered.rocket_name}</li>))}
         </ul>
       </div>
     </section>

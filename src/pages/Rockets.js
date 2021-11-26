@@ -4,30 +4,28 @@ import {
   cancelReservationAction,
   getRocketsAction,
   setReserveAction,
-} from '../store/reducers/actions/actions';
+} from '../store/reducers/actions/rocketActions';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const { rockets } = useSelector((state) => state.rockets);
-  const loadRockets = () => {
-    dispatch(getRocketsAction());
-  };
+
   useEffect(() => {
-    loadRockets();
+    if (!rockets) {
+      dispatch(getRocketsAction());
+    }
   }, []);
 
   const setReserve = (id) => {
     dispatch(setReserveAction(id));
   };
-
   const cancelReserve = (id) => {
     dispatch(cancelReservationAction(id));
   };
-
   return (
     <section className="inner-padding">
       {rockets
-        && rockets.filter((rocket) => (
+        && rockets.map((rocket) => (
           <div className="rocket" key={rocket.id}>
             <div className="rocket-img">
               <img src={rocket.flickr_images} alt="rocket" />
@@ -35,9 +33,7 @@ const Rockets = () => {
             <div className="rocket-info">
               <h1>{rocket.rocket_name}</h1>
               <p>
-                {rocket.reserved && (
-                  <span className="reserve-badge">Reserved</span>
-                )}
+                {rocket.reserved && <span className="reserve-badge">Reserved</span>}
                 {rocket.description}
               </p>
               <div className="button-div">
