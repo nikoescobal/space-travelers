@@ -15,19 +15,44 @@ const Profiles = () => {
   return (
     <section className="my-profile inner-padding">
       <div>
-        <h1>My Missions</h1>
+        <h1>
+          {' '}
+          My Missions
+          {' '}
+        </h1>
       </div>
+      {' '}
       <div className="rockets">
-        <h1>My Rockets</h1>
+        <h1>
+          {' '}
+          My Rockets
+          {' '}
+        </h1>
+        {' '}
         <ul className="list-container">
-          {rockets
+          {' '}
+          {
+            rockets
             && rockets.filter((rocket) => (
-              <li key={rocket.id} className="list-item">
-                {rocket.rocket_name}
+              <li
+                key={rocket.id}
+                className="list-item"
+              >
+                {' '}
+                { rocket.rocket_name }
+                {' '}
+
               </li>
-            ))}
+            ))
+        }
+          {' '}
+
         </ul>
+        {' '}
+
       </div>
+      {' '}
+
     </section>
   );
 };
