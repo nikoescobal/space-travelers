@@ -33,6 +33,11 @@ const Dragons = () => {
               <img src={images[0]} alt={name} />
             </div>
             <h2>{name}</h2>
+            <div>
+              {reserved && (
+                <div className="bg-blue-500 py-2 px-4">Reserved</div>
+              )}
+            </div>
             <p>{type}</p>
             <div>
               {!reserved && (
