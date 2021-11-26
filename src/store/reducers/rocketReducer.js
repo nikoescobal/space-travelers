@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import {
   GET_ROCKETS,
   SET_ROCKETS,
@@ -6,6 +7,7 @@ import {
 } from '../types';
 
 const initialState = { rockets: null };
+
 export default function rocketsReducer(state = initialState, action) {
   switch (action.type) {
     case GET_ROCKETS:
