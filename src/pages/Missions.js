@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
+
 import {
   getMissions,
   leaveMission,
@@ -29,7 +29,7 @@ const Missions = () => {
           <tr>
             <th> Mission </th> <th> Description </th> <th> Status </th>{" "}
             <th> {} </th>{" "}
-          </tr>
+          </tr>{" "}
         </thead>{" "}
         <tbody>
           {" "}
@@ -40,16 +40,32 @@ const Missions = () => {
               <td className="status" width="100px">
                 {" "}
                 {mission.isReserved ? (
-                  <Badge bg="success"> ACTIVE MEMBER </Badge>
+                  <div
+                    className="primary"
+                    style={{ backgroundColor: "blue", width: "130px" }}
+                    bg="success"
+                  >
+                    {" "}
+                    ACTIVE MEMBER{" "}
+                  </div>
                 ) : (
-                  <Badge bg="secondary"> NOT A MEMBER </Badge>
+                  <div
+                    className="secondary"
+                    style={{ backgroundColor: "grey", width: "120px" }}
+                    bg="secondary"
+                  >
+                    {" "}
+                    NOT A MEMBER{" "}
+                  </div>
                 )}{" "}
               </td>{" "}
               <td className="status" width="150px">
                 {" "}
                 {mission.isReserved ? (
                   <Button
+                    className="join"
                     variant="outline-danger"
+                    style={{ border: "1px solid #f02e58", width: "125px" }}
                     onClick={() => dispatch(leaveMission(mission.mission_id))}
                   >
                     {" "}
@@ -58,6 +74,8 @@ const Missions = () => {
                 ) : (
                   <Button
                     variant="outline-dark"
+                    className="leave"
+                    style={{ border: "1px solid #cacbcd", width: "100px" }}
                     onClick={() => dispatch(joinMission(mission.mission_id))}
                   >
                     {" "}
@@ -66,9 +84,9 @@ const Missions = () => {
                 )}{" "}
               </td>{" "}
             </tr>
-          ))}
+          ))}{" "}
         </tbody>{" "}
-      </Table>
+      </Table>{" "}
     </div>
   );
 };
