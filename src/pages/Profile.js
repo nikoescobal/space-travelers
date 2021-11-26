@@ -49,15 +49,27 @@ const Profile = () => {
     <div>
       {reservedDragons.length ? (
         <>
-          <h2>My Reserved Dragons</h2>
-          <ul>
-            {reservedDragons.map((dragon) => (
-              <li key={dragon.name}>{dragon.name}</li>
-            ))}
-          </ul>
+          <table className="table-fixed mx-auto w-full">
+            <thead>
+              <tr>
+                <th className="w-1/3 space-x-3 text-2xl p-3 font-bold">My Dragons</th>
+                <th className="w-1/3 space-x-3 text-2xl p-3 font-bold">My Rockets </th>
+                <th className="w-1/3 space-x-3 text-2xl p-3 font-bold">My Missions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className=" flex flex-col p-3">
+                {reservedDragons.map((dragon) => (
+                  <td className="border-gray-400 border p-3" key={dragon.name}>{dragon.name}</td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
         </>
       ) : (
-        <h2>There are currently no dragons reserved.</h2>
+        <h2 className="p-3 text-2xl font-bold">
+          There are currently no dragons reserved.
+        </h2>
       )}
     </div>
   );
