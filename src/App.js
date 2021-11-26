@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Missions from './pages/Missions';
-import Profile from './pages/Profile';
-import Rockets from './pages/Rockets';
-import Dragons from './pages/Dragons';
+import Missions from './components/Missions';
+import Profile from './components/Profile';
+import Rockets from './components/Rockets';
+import Dragons from './components/Dragons';
 
 const App = () => (
   <Router>
