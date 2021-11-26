@@ -127,10 +127,6 @@ a:active {
   background-color: rgb(11, 11, 99);
 }
 
-.inner-padding {
-  padding: 30px 50px;
-}
-
 .cancel-reserve-btn {
   background-color: rgb(228, 228, 236);
   color: black;
@@ -142,23 +138,4 @@ a:active {
 .cancel-reserve-btn:hover {
   cursor: pointer;
   background-color: rgb(193, 197, 197);
-}
-
-.my-profile {
-  display: flex;
-  justify-content: space-between;
-}
-
-.list-container {
-  border: 1px solid grey;
-  border-radius: 3px;
-}
-
-.list-container li:nth-child(n) {
-  border-bottom: 1px solid grey;
-  padding: 10px 10px 15px 10px;
-}
-
-.list-container li:last-child {
-  border-bottom: none;
 }

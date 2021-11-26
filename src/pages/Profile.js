@@ -32,16 +32,17 @@ const Profile = () => {
         </thead>
         <tbody>
           <tr className=" flex flex-col px-6 py-3">
-            {dragons.filter((dragon) => dragon.reserved === true)
+            {dragons
+            && dragons.filter((dragon) => dragon.reserved === true)
               .map((reserve) => (
-                <td className="border-gray-400 border px-6 py-3" key={reserve.name}>{reserve.name}</td>
+                <td className="border-gray-400 border px-6 py-3" key={reserve.id}>{reserve.name}</td>
               ))}
           </tr>
           <tr className=" flex flex-col px-6 py-3">
             {rockets
               && rockets.filter((rocket) => rocket.reserved === true)
                 .map((filtered) => (
-                  <td className="border-gray-400 border px-6 py-3" key={filtered.name}>{filtered.name}</td>
+                  <td className="border-gray-400 border px-6 py-3" key={filtered.id}>{filtered.rocket_name}</td>
                 ))}
           </tr>
         </tbody>
