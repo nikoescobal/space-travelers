@@ -30,9 +30,9 @@ const Rockets = () => {
         && rockets.map((rocket) => (
           <div className="rocket" key={rocket.id}>
             <div className="rocket-img">
-              <img src={rocket.flickr_images} alt="rocket" />
+              <img className="pl-6" src={rocket.flickr_images} alt="rocket" />
             </div>
-            <div className="rocket-info">
+            <div className="rocket-info pr-3">
               <h1>{rocket.rocket_name}</h1>
               <p>
                 {rocket.reserved && <span className="reserve-badge">Reserved</span>}
