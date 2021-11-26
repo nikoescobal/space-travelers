@@ -28,17 +28,17 @@ export const getRocketsAction = () => async (dispatch) => {
   }
 };
 
-export const cancelReservationAction = (rocketId) => (dispatch) => {
+export const setReserveAction = (rocketId) => (dispatch) => {
   try {
-    dispatch({ type: CANCEL_RESERVES, payload: rocketId });
+    dispatch({ type: SET_RESERVES, payload: rocketId });
   } catch (error) {
     dispatch({ type: ERROR_ROCKETS, payload: error.message });
   }
 };
 
-export const setReserveAction = (rocketId) => (dispatch) => {
+export const cancelReservationAction = (rocketId) => (dispatch) => {
   try {
-    dispatch({ type: SET_RESERVES, payload: rocketId });
+    dispatch({ type: CANCEL_RESERVES, payload: rocketId });
   } catch (error) {
     dispatch({ type: ERROR_ROCKETS, payload: error.message });
   }
