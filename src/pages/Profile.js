@@ -58,9 +58,9 @@ const Profile = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className=" flex flex-col p-3">
+              <tr className=" flex flex-col px-6 py-3">
                 {reservedDragons.map((dragon) => (
-                  <td className="border-gray-400 border p-3" key={dragon.name}>{dragon.name}</td>
+                  <td className="border-gray-400 border px-6 py-3" key={dragon.name}>{dragon.name}</td>
                 ))}
               </tr>
             </tbody>
