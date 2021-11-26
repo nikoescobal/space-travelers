@@ -2,7 +2,7 @@ import { combineReducers, applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { rocketsReducer } from './reducers/rootReducer';
+import rocketsReducer from './reducers/rocketReducer';
 import dragonReducer from './reducers/dragonReducer';
 import missionReducer from './reducers/missionReducer';
 

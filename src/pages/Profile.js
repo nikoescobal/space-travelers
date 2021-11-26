@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { getRocketsAction } from '../store/reducers/actions/actions';
+// import { getRocketsAction } from '../store/reducers/actions/rocketActions';
 import { fetchData } from '../store/reducers/actions/dragonActions';
 
-// const Profile = () => {
+// export const RocketProfile = () => {
+//   const dispatch = useDispatch();
 //   const { rockets } = useSelector((state) => state.rockets);
 
 //   useEffect(() => {
@@ -31,7 +32,6 @@ import { fetchData } from '../store/reducers/actions/dragonActions';
 //     </section>
 //   );
 // };
-// export default Profile;
 
 const Profile = () => {
   const dispatch = useDispatch();
