@@ -116,7 +116,7 @@ const Missions = () => {
                                       >
                                         {' '}
                                         Join Mission
-{' '}
+                                        {' '}
                                       </Button>
                                     )
 }

@@ -34,6 +34,15 @@ export const getMissions = () => async function getMissions(dispatch) {
   }));
   dispatch(loadMissions(missions));
 };
+export const newStateToJoinMission = (missions, id) => {
+  const newState = missions.map((mission) => {
+    if (mission.mission_id !== id) {
+      return mission;
+    }
+    return { ...mission, isReserved: true };
+  });
+  return newState;
+};
 
 export const newStateToLeaveMission = (missions, id) => {
   const newState = missions.map((mission) => {

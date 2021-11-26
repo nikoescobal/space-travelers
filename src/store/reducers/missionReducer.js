@@ -1,13 +1,13 @@
 /* stylelint-disable */
 /* eslint-disable */
-import { JOIN_MISSION, LOAD_MISSIONS } from '../types';
-import { newStateToJoinMission, newStateToLeaveMission } from '../actions/missionActions'
+import { JOIN_MISSION, LOAD_MISSIONS, LEAVE_MISSION } from '../types';
+import { newStateToJoinMission, newStateToLeaveMission } from '../reducers/actions/missionActions'
 const initialState = []
 
 const missionReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case GET_MISSIONS:
+        case LOAD_MISSIONS:
             return [...state, ...action.payload];
         case JOIN_MISSION:
             return newStateToJoinMission(state, action.payload);
