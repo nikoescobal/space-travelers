@@ -224,6 +224,7 @@ td {
     margin-left: 1rem;
     font-size: 14px;
     border-radius: 3px;
+    color: white;
 }
 
 button:hover {
