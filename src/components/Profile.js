@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getRocketsAction } from '../store/reducers/actions/rocketActions';
-import { fetchData } from '../store/reducers/actions/dragonActions';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRocketsAction } from "../store/reducers/actions/rocketActions";
+import { fetchData } from "../store/reducers/actions/dragonActions";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -28,14 +28,11 @@ const Profile = () => {
           My Rockets
         </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {rockets
-            && rockets
+          {rockets &&
+            rockets
               .filter((rocket) => rocket.reserved === true)
               .map((filtered) => (
-                <li
-                  className="border-gray-400 border p-6"
-                  key={filtered.id}
-                >
+                <li className="border-gray-400 border p-6" key={filtered.id}>
                   {filtered.rocket_name}
                 </li>
               ))}
@@ -52,14 +49,11 @@ const Profile = () => {
           My Dragons
         </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {dragons
-            && dragons
+          {dragons &&
+            dragons
               .filter((dragon) => dragon.reserved === true)
               .map((reserve) => (
-                <li
-                  className="border-gray-400 border  p-6"
-                  key={reserve.id}
-                >
+                <li className="border-gray-400 border  p-6" key={reserve.id}>
                   {reserve.name}
                 </li>
               ))}

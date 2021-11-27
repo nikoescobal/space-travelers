@@ -6,7 +6,7 @@ import {
   initialState,
   RESERVE_DRAGONS,
   CANCEL_RESERVATION,
-} from '../types';
+} from "../types";
 
 const dragonReducer = (state = initialState, action) => {
   switch (action.type) {
