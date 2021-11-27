@@ -36,12 +36,16 @@ const Profile = () => {
             rockets
               .filter((rocket) => rocket.reserved === true)
               .map((filtered) => (
-                <li className="border-gray-400 border p-6" key={filtered.id}>
+                <li
+                  className="border-gray-500 bg-grey border p-6"
+                  key={filtered.id}
+                >
                   {filtered.rocket_name}
                 </li>
               ))}
         </ul>
       </section>
+
       <section>
         <h2 className="text-2xl w-full flex justify-center items-center p-3 font-bold">
           My Missions
@@ -57,6 +61,7 @@ const Profile = () => {
               ))}
         </ul>
       </section>
+
       <section>
         <h2 className="text-2xl w-full flex justify-center items-center p-3 font-bold">
           My Dragons
@@ -75,4 +80,5 @@ const Profile = () => {
     </div>
   );
 };
+
 export default Profile;
