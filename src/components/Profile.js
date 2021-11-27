@@ -3,31 +3,28 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRocketsAction } from "../store/reducers/actions/rocketActions";
 import { fetchData } from "../store/reducers/actions/dragonActions";
-import { getMissions } from "../store/reducers/actions/missionActions";
+import { fetchAllMissions } from "../store/reducers/actions/missionActions";
 
 const Profile = () => {
   const dispatch = useDispatch();
   const dragons = useSelector((state) => state.dragons.dragons);
   const { rockets } = useSelector((state) => state.rockets);
-  const { missions } = useSelector((state) => state.missions);
-
+  const missions = useSelector((state) => state.missions);
   useEffect(() => {
     if (!rockets) {
       dispatch(getRocketsAction());
     }
   }, []);
-
+  useEffect(() => {
+    if (!missions) {
+      dispatch(fetchAllMissions());
+    }
+  }, []);
   useEffect(() => {
     if (!dragons.length) {
       dispatch(fetchData);
     }
   }, []);
-  useEffect(() => {
-    if (!missions) {
-      dispatch(getMissions());
-    }
-  }, []);
-
   return (
     <div className="grid grid-cols-3 w-full mx-auto">
       <section>
@@ -55,11 +52,11 @@ const Profile = () => {
           {" "}
           {missions &&
             missions
-              .filter((mission) => mission.reserved === true)
+              .filter((mission) => mission.isReserved === true)
               .map((reserve) => (
                 <li className="border-gray-400 border  p-6" key={reserve.id}>
                   {" "}
-                  {reserve.name}{" "}
+                  {reserve.mission_name}{" "}
                 </li>
               ))}{" "}
         </ul>{" "}
