@@ -28,7 +28,7 @@ const Profile = () => {
   return (
     <div className="grid grid-cols-3 w-full mx-auto">
       <section>
-        <h2 className="text-2xl w-full flex justify-center items-center p-3 font-bold">
+        <h2 className="text-base lg:text-2xl w-full flex justify-center items-center p-3 font-bold">
           My Rockets
         </h2>
         <ul className=" flex flex-col px-6 py-3">
