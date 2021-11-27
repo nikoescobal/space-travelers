@@ -22,7 +22,7 @@ const Missions = () => {
   }, []);
   return (
     <div>
-      <Table striped bordered hover size='sm' className='table'>
+      <Table striped bordered hover size="sm" className="table">
         <thead>
           <tr>
             <th> Mission </th> <th> Description </th> <th> Status </th>{" "}
@@ -33,14 +33,14 @@ const Missions = () => {
           {" "}
           {selectedMissions.map((m) => (
             <tr key={uuidv4()}>
-              <td className='mission-name'> {m.mission_name} </td>{" "}
+              <td className="mission-name"> {m.mission_name} </td>{" "}
               <td> {m.mission_description} </td>{" "}
-              <td className='status' width='100px'>
+              <td className="status" width="100px">
                 {" "}
                 {m.isReserved ? (
                   <div
-                    className='primary'
-                    bg='success'
+                    className="primary"
+                    bg="success"
                     style={{ backgroundColor: "blue", width: "130px" }}
                   >
                     {" "}
@@ -48,8 +48,8 @@ const Missions = () => {
                   </div>
                 ) : (
                   <div
-                    className='secondary'
-                    bg='secondary'
+                    className="secondary"
+                    bg="secondary"
                     style={{ backgroundColor: "grey", width: "130px" }}
                   >
                     {" "}
@@ -57,14 +57,14 @@ const Missions = () => {
                   </div>
                 )}{" "}
               </td>{" "}
-              <td className='status' width='150px'>
+              <td className="status" width="150px">
                 {" "}
                 {m.isReserved ? (
                   <button
-                    type='button'
-                    className='join'
+                    type="button"
+                    className="join"
                     style={{ border: "1px solid red", width: "130px" }}
-                    variant='outline-danger'
+                    variant="outline-danger"
                     onClick={() => dispatch(leaveMission(m.mission_id))}
                   >
                     {" "}
@@ -72,9 +72,9 @@ const Missions = () => {
                   </button>
                 ) : (
                   <button
-                    type='button'
-                    className='leave'
-                    variant='outline-dark'
+                    type="button"
+                    className="leave"
+                    variant="outline-dark"
                     style={{ border: "1px solid grey", width: "100px" }}
                     onClick={() => dispatch(joinMission(m.mission_id))}
                   >
