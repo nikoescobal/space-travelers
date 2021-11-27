@@ -32,8 +32,8 @@ const Profile = () => {
           My Rockets
         </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {rockets
-            && rockets
+          {rockets &&
+            rockets
               .filter((rocket) => rocket.reserved === true)
               .map((filtered) => (
                 <li className="border-gray-400 border p-6" key={filtered.id}>
@@ -47,8 +47,8 @@ const Profile = () => {
           My Missions
         </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {missions
-            && missions
+          {missions &&
+            missions
               .filter((mission) => mission.isReserved === true)
               .map((reserve) => (
                 <li className="border-gray-400 border  p-6" key={reserve.id}>
@@ -62,8 +62,8 @@ const Profile = () => {
           My Dragons
         </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {dragons
-            && dragons
+          {dragons &&
+            dragons
               .filter((dragon) => dragon.reserved === true)
               .map((reserve) => (
                 <li className="border-gray-400 border  p-6" key={reserve.id}>
