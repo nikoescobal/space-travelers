@@ -28,57 +28,57 @@ const Profile = () => {
   return (
     <div className="grid grid-cols-3 w-full mx-auto">
       <section>
-        <h2 className="text-2xl w-full flex justify-center items-center p-3 font-bold">
-          My Rockets{" "}
-        </h2>{" "}
+        <h2 className="text-base lg:text-2xl w-full flex justify-center items-center p-3 font-bold">
+          My Rockets
+        </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {" "}
           {rockets &&
             rockets
               .filter((rocket) => rocket.reserved === true)
               .map((filtered) => (
-                <li className="border-gray-400 border p-6" key={filtered.id}>
-                  {" "}
-                  {filtered.rocket_name}{" "}
+                <li
+                  className="border-gray-500 bg-grey border p-6"
+                  key={filtered.id}
+                >
+                  {filtered.rocket_name}
                 </li>
-              ))}{" "}
-        </ul>{" "}
-      </section>{" "}
+              ))}
+        </ul>
+      </section>
+
       <section>
         <h2 className="text-2xl w-full flex justify-center items-center p-3 font-bold">
-          My Missions{" "}
-        </h2>{" "}
+          My Missions
+        </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {" "}
           {missions &&
             missions
               .filter((mission) => mission.isReserved === true)
               .map((reserve) => (
                 <li className="border-gray-400 border  p-6" key={reserve.id}>
-                  {" "}
-                  {reserve.mission_name}{" "}
+                  {reserve.mission_name}
                 </li>
-              ))}{" "}
-        </ul>{" "}
-      </section>{" "}
+              ))}
+        </ul>
+      </section>
+
       <section>
         <h2 className="text-2xl w-full flex justify-center items-center p-3 font-bold">
-          My Dragons{" "}
-        </h2>{" "}
+          My Dragons
+        </h2>
         <ul className=" flex flex-col px-6 py-3">
-          {" "}
           {dragons &&
             dragons
               .filter((dragon) => dragon.reserved === true)
               .map((reserve) => (
                 <li className="border-gray-400 border  p-6" key={reserve.id}>
-                  {" "}
-                  {reserve.name}{" "}
+                  {reserve.name}
                 </li>
-              ))}{" "}
-        </ul>{" "}
-      </section>{" "}
+              ))}
+        </ul>
+      </section>
     </div>
   );
 };
+
 export default Profile;
