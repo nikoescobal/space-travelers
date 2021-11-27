@@ -12,8 +12,11 @@
 - VScode
 - Lots of love :heart:
 ## Screenshot
-[Click here to see a screenshot](<img width="1440" alt="Screen Shot 2021-11-27 at 6 43 52 AM" src="https://user-images.githubusercontent.com/62937819/143659785-7746b52e-3a7b-495b-a550-16aeead6648c.png">
-)
+![image](https://user-images.githubusercontent.com/60612329/143672154-e6ce8752-561f-4117-9ed8-9487c729f294.png)
+![image](https://user-images.githubusercontent.com/60612329/143672165-92e00aa1-6e38-4df1-be93-656780ec0866.png)
+![image](https://user-images.githubusercontent.com/60612329/143672172-76e82e1b-cb0d-4dd9-bbd9-ceb26d72aaf8.png)
+![image](https://user-images.githubusercontent.com/60612329/143672188-317a5547-067b-4f12-8508-5571973b6e0c.png)
+
 ## Live Demo
 [Click here to see the project](https://spacexapi-demo.netlify.app/)
 ## Getting Started
