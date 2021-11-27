@@ -4,7 +4,7 @@ import {
   SET_ROCKETS,
   SET_RESERVES,
   CANCEL_RESERVES,
-} from '../types';
+} from "../types";
 
 const initialState = { rockets: null };
 

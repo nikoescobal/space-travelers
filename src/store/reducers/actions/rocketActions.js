@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   GET_ROCKETS,
   SET_ROCKETS,
   ERROR_ROCKETS,
   SET_RESERVES,
   CANCEL_RESERVES,
-} from '../../types';
+} from "../../types";
 
 export const getRocketsAction = () => async (dispatch) => {
-  const baseUrl = 'https://api.spacexdata.com/v3/rockets';
+  const baseUrl = "https://api.spacexdata.com/v3/rockets";
   try {
     dispatch({ type: GET_ROCKETS });
     const newRocketList = [];

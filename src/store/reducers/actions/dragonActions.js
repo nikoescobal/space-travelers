@@ -4,7 +4,7 @@ import {
   RESERVE_DRAGONS,
   CANCEL_RESERVATION,
   LOAD_FAILED,
-} from '../../types';
+} from "../../types";
 
 const loadDragons = (dragons) => ({
   type: LOAD_DRAGONS,
@@ -34,20 +34,18 @@ export const fetchData = () => async (dispatch) => {
     dispatch(
       loadDragons(
         dragons.map((dragon) => {
-          const {
-            id, name, type, flickr_images: images,
-          } = dragon;
+          const { id, name, type, flickr_images: images } = dragon;
           return {
             id,
             name,
             type,
             images,
           };
-        }),
-      ),
+        })
+      )
     );
   } catch (err) {
-    err.description = 'An error occurred. Please try again later.';
+    err.description = "An error occurred. Please try again later.";
     dispatch(loadFailed(err.description));
   }
 };
